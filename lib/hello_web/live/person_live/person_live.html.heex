@@ -1,0 +1,26 @@
+<%= if @live_action == :index do %>
+  <.live_component
+    module = {HelloWeb.PersonLive.Index}
+    id = {:index}
+    persons = {@persons}
+  />
+<% end %>
+
+<%= if @live_action == :new do %>
+  <.live_component
+    module = {HelloWeb.PersonLive.New}
+    id = {:new}
+    form = {@form}
+  />
+<% end %>
+
+<%= if @live_action == :edit do %>
+  <.live_component 
+    module = {HelloWeb.PersonLive.Edit}
+    id = {@id}
+    form = {@form}
+    person = {@person}
+  />
+<% end %>
+
+

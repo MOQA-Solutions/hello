@@ -1,0 +1,31 @@
+<h1>Listing Persons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+    
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for person <- @persons do %>
+      <tr>
+        <td><%= elem(person , 1) %></td>
+        <td><%= elem(person , 2) %></td>
+	<%= id = elem(person , 1) %>
+	<td>
+	  <.link href = {~p"/persons/#{id}"}>Show</.link> 
+	  <!-- <.link href = {~p"/persons/#{id}/edit"}>edit</.link> --> 
+	  <.link href = {~p"/persons/#{id}"} method = {"delete"}>Delete</.link>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <span>
+	<.link href = {~p"/livepersons"}>Live</.link>
+  </span>
+
+
